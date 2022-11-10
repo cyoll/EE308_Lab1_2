@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body
+{
+    background-image: url("denglu/背景图.png");
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0);
+}
+.container{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.containerk{
+    width: 1000px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+}
+.kuang {
+    /* Property 1=Default */
+    position: fixed;
+    width: 820px;
+    height: 200px;
+    background: rgba(254, 247, 237, 0.5);
+    border: 10px solid #9B7242;
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+    backdrop-filter: blur(40px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+.container1{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 480px;
+    height: 60px;
+    border: none;
+}
+@font-face {
+    font-family: "FZCJLJT"; /*这里是自己给字体起的名*/
+    src: url("denglu/方正粗金陵简体.TTF"); /*字体储存路径*//
+}
+p{
+    text-align: right;/*水平居中*/
+    line-height: 60px;/*这边跟外部span高度设置成一样就垂直居中了*/
+    font-size: 22px;
+    font-family: FZCJLJT;
+    text-space: 10px;
+}
+.container2{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 520px;
+    height: 150px;
+    border: none;
+}
+.tab{
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    background: #ffffff;
+    border: none;
+    font-size: 22px;
+    font-family: FZCJLJT;
+    outline: none;
+    padding-top:10px;
+    padding-left:10px;
+    padding-bottom: 10px;
+    margin-left: 20px;
+}
+.touxiang {
+    position: fixed;
+    background-image: url("denglu/用户头像.svg");
+    background-size: 450px 450px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(255,255,255,0);
+    width: 450px;
+    height: 450px;
+    left: 100px;
+    display: flex;
+}
+.login{
+    position: fixed;
+    background-image: url("denglu/确认按钮.png");
+    background-size: 400px 277px;
+    background-repeat: no-repeat;
+    background-color: rgba(255,255,255,0);
+    background-position: center;
+    height: 280px;
+    width: 400px;
+    border: none;
+    outline: none;
+    right: 15px;
+    bottom: 0;
+}

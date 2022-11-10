@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="gameprocess.css">
+    <title>游戏界面</title>
+</head>
+<body onload="gamebegin()">
+<div>
+    <input class="run" type="button" id="run" onclick="run()">
+    <span class="jiangxiang"><p id="price">剩63奖</p></span>
+    <div class="banniang"></div>
+    <div class="result" id="result">谢谢参与</div>
+    <input type="button" class="shake" id="btn" onclick="button()">
+    <span class="container">
+        <span class="container1">
+            <div id="player1" class="player1" style="color: #9B7242">1</div>
+            <div id="player2" class="player2" style="color: #9B7242">2</div>
+        </span>
+        <span class="container2">
+            <div id="player3" class="player3" style="color: #9B7242">3</div>
+            <div class="diceshake" id="dice">
+                <div id="img11" class="img11"><img src="点数1.svg" id="img1" width="100" title="dice1" class="img1"></div>
+                <div id="img22" class="img22"><img src="点数2.svg" id="img2" width="100" title="dice2" class="img2"></div>
+                <div id="img33" class="img33"><img src="点数3.svg" id="img3" width="100" title="dice3" class="img3"></div>
+                <div id="img44" class="img44"><img src="点数4.svg" id="img4" width="100" title="dice4" class="img4"></div>
+                <div id="img55" class="img55"><img src="点数5.svg" id="img5" width="100" title="dice5" class="img5"></div>
+                <div id="img66" class="img66"><img src="点数6.svg" id="img6" width="100" title="dice6" class="img6"></div>
+            </div>
+            <div id="player4" class="player4" style="color: #9B7242">4</div>
+        </span>
+    </span>
+</div>
+</body>
+</html>
+<script src="gameprocess.js"></script>
