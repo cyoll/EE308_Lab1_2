@@ -1,21 +1,11 @@
-var mails=[];
-mails=JSON.parse(localStorage.mail);
-var passwords=[];
-passwords=JSON.parse(localStorage.password);
-var index=localStorage.index;
-var friendsindex=[3,5,7];
-var userindex=[];
-userindex[0]=index;
-for(i=0;i<3;i++){
-    userindex[i+1]=friendsindex[i];
-}
+userindex=JSON.parse(localStorage.players);
+// alert(userindex[0]+" "+userindex[1]+" "+userindex[2]+" "+userindex[3]);
 function gamebegin(){
     //初始设置，设定排位和顺序
-    var i=index-1;
-    document.getElementById("player1").innerHTML="玩家"+index;
-    document.getElementById("player2").innerHTML="玩家"+friendsindex[0];
-    document.getElementById("player3").innerHTML="玩家"+friendsindex[1];
-    document.getElementById("player4").innerHTML="玩家"+friendsindex[2];
+    document.getElementById("player1").innerHTML="玩家"+userindex[0];
+    document.getElementById("player2").innerHTML="玩家"+userindex[1];
+    document.getElementById("player3").innerHTML="玩家"+userindex[2];
+    document.getElementById("player4").innerHTML="玩家"+userindex[3];
     //房主（用户）先手
     document.getElementById("player1").style.backgroundImage="url(gameprocess/玩家id背景（高亮）.png)";
 }
@@ -59,49 +49,35 @@ function clock(){
 //按钮按过后，其他玩家也会按顺序博饼
 var counter=0;
 var scores=[0,0,0,0],l=0;
-
+var timesRun = 0;
+timer();
 function button(){
     counter++;
     if(counter<3){
         simpleProcess();
         if (counter===2){
             document.getElementById("player1").style.backgroundImage=("url(gameprocess/玩家id背景（普通）.png)");
-            // numtime=window.setInterval(simpleProcess1,3000);
-            // 执行6次后结束
-            var timesRun = 0;
-            var interval = window.setInterval(function(){
+            document.getElementById("player2").style.backgroundImage=("url(gameprocess/玩家id背景（高亮）.png)");
+            // 执行2次后结束
+            var interval= window.setInterval(function(){
                 timesRun += 1;
-                if(timesRun === 6){
+                if(timesRun === 2){
+                    document.getElementById("player2").style.backgroundImage=("url(gameprocess/玩家id背景（普通）.png)");
+                    document.getElementById("player3").style.backgroundImage=("url(gameprocess/玩家id背景（高亮）.png)");
+                }
+                else if(timesRun === 4){
+                    document.getElementById("player3").style.backgroundImage=("url(gameprocess/玩家id背景（普通）.png)");
+                    document.getElementById("player4").style.backgroundImage=("url(gameprocess/玩家id背景（高亮）.png)");
+                }
+                else if(timesRun === 7){
                     clearInterval(interval);
-                    // alert(scores[0]+" "+scores[1]+" "+scores[2]+" "+scores[3]);
-                    var l=scores.length;
-                    for (i=0;i<l-1;i++){
-                        for (j=i+1;j<l;j++){
-                            if(scores[i]<scores[j]){
-                                var k=scores[i];
-                                scores[i]=scores[j];
-                                scores[j]=k;
-                                var m=userindex[i];
-                                userindex[i]=userindex[j];
-                                userindex[j]=m;
-                            }
-                        }
-                    }
-                    var scores1=[];
-                    for (i=0;i<l;i++){
-                        scores1.push(scores[i].toString());
-                    }
-                    localStorage.scorestr=JSON.stringify(scores1);
-                    var userindex1=[];
-                    for (i=0;i<l;i++){
-                        userindex1.push(userindex[i].toString());
-                    }
-                    localStorage.users=JSON.stringify(userindex1);
+                    document.getElementById("player4").style.backgroundImage=("url(gameprocess/玩家id背景（普通）.png)");
                     window.location.href="结算页.html";
+                    store();
                 }
                 //do whatever here..
                 simpleProcess1();
-            }, 3000);
+                }, 5000);
         }
     }
 }
@@ -173,7 +149,6 @@ function simpleProcess1(){
         document.getElementById("img55").style.animation="d55 1s 5 linear";
         document.getElementById("img66").style.animation="d66 1s 5 linear";
         time=self.setInterval("clock()",30);
-
         resultshow.style.animation="close 1s  ease-out";
         resultshow.style.opacity=0;
         flag=false;
@@ -248,44 +223,79 @@ function rewardDetermine(a1,a2,a3,a4,a5,a6){
 
 //分数计算
 function scoreDetermine(show){
-    if(show==='谢谢参与'){
-        scores[l++]=0;
-    }
-    else if(show==='一秀'){
-        scores[l++]=5;
+    if(show==='一秀'){
+        scores.push(5);
     }
     else if(show==='二举'){
-        scores[l++]=10;
+        scores.push(10);
     }
     else if(show==='四进'){
-        scores[l++]=15;
+        scores.push(15);
     }
     else if(show==='三红'){
-        scores[l++]=20;
+        scores.push(20);
     }
     else if(show==='对堂'){
-        scores[l++]=25;
+        scores.push(25);
     }
     else if(show==='红四'){
-        scores[l++]=30;
+        scores.push(30);
     }
     else if(show==='五子'){
-        scores[l++]=35;
+        scores.push(35);
     }
     else if(show==='红五'){
-        scores[l++]=40;
+        scores.push(40);
     }
     else if(show==='六勃黑'){
-        scores[l++]=45;
+        scores.push(45);
     }
     else if(show==='六勃红'){
-        scores[l++]=50;
+        scores.push(50);
     }
-    else{
-        scores[l++]=55;
+    else if(show==='状元插金花'){
+        scores.push(55);
     }
+    else {scores.push(0)}
+}
+// 排名后进行数据本地存储
+function store(){
+    var l=scores.length;
+    for (i=0;i<l-1;i++){
+        for (j=i+1;j<l;j++){
+            if(scores[i]<scores[j]){
+                var m=userindex[i];
+                userindex[i]=userindex[j];
+                userindex[j]=m;
+                var k=scores[i];
+                scores[i]=scores[j];
+                scores[j]=k;
+            }
+        }
+    }
+    alert(userindex[0]+" "+userindex[1]+" "+userindex[2]+" "+userindex[3]);
+    alert(scores[0]+" "+scores[1]+" "+scores[2]+" "+scores[3]);
+    var scores1=[];
+    for (i=0;i<l;i++){
+        scores1.push(scores[i].toString());
+    }
+    localStorage.scorestr=JSON.stringify(scores1);
+    var userindex1=[];
+    for (i=0;i<l;i++){
+        userindex1.push(userindex[i].toString());
+    }
+    localStorage.users=JSON.stringify(userindex1);
 }
 //逃跑按键
 function run(){
-    // window.location.href="";
+    window.location.href="主页.html";
+}
+//倒计时js
+var t=5;
+function timer()
+{
+    setInterval(function(){
+        if(t>0){document.getElementById("num").value=t;
+            t--;}else{t+=5}
+    },800);
 }
