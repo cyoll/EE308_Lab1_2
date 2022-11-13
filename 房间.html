@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>房间</title>
+    <link rel="stylesheet" href="房间.css">
+</head>
+<body onload="begin()">
+    <a href="主页.html">
+        <img class="back" title="back" src="房间贴图/返回按钮.svg" >
+    </a>
+    <a href="gameprocess.html">
+        <img class="ready" title="ready"
+        src="房间贴图/开局按钮.svg" >
+    </a>
+    <div class="invitebox">
+        <div class="invite" id="window" >
+            <span class="text">
+                <div class="title">请输入邀请玩家的ID</div>
+                <input type="id" id="id" title="id">
+            </span>
+            <span class="check" onclick="yes2()" title="check"><img title="check" src="./房间贴图/确认邀请.svg" >
+            </span>
+        </div>
+        <div class="player">
+    
+            <span class="player1">
+                <p class="username">
+                <span id="user1">
+                        <font color="#FBE9CC">玩家ID</font> 
+                </span>
+                </p>
+
+            </span>
+            <span class="player2" id="invite2" onclick="inv2()">
+                <p class="username">
+                    <span id="user2">
+                            <font color="#FBE9CC">user2</font> 
+                    </span>
+                    </p>
+            </span>
+            <span class="player3" onclick="inv3()">
+                <p class="username">
+                    <span id="user3">
+                            <font color="#FBE9CC">user3</font> 
+                    </span>
+                    </p>
+            </span>
+            <span class="player4" onclick="inv4()">
+                <p class="username">
+                    <span id="user4">
+                            <font color="#FBE9CC">user4</font> 
+                    </span>
+                    </p>
+            </span>
+        
+        </div>
+    </div>
+    
+</body>
+</html>
+<script src="房间.js">
+</script>

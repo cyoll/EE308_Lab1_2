@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="Page-Enter" content="blendTrans(Duration=2.0")/>
+    <title>主页</title>
+    <link rel="stylesheet" href="主页.css">
+</head>
+<body onload="beforeBegin()">
+    <img class="logo" src="主页贴图/左上角logo.svg">
+    <img class="kanban" src="主页贴图/看板娘和她的影子.svg">
+    <a type="button" onclick="gameBegin()" ><img class="start" src="主页贴图/开始游戏按钮.svg"></a>
+    <a href="ranking.html"><img class="rank" src="主页贴图/赛季排名.png" ></a>
+    <p class="ider" id="user"><span>玩家id</span></p>
+    <!-- 规则弹窗 -->
+    <div class="rulebox" id="close" >
+        <div class="btn" id="btn" onclick="show()"><img src="游戏规则贴图/查看规则按钮.png" alt=""></div>
+        <div class="rule" id="rule">
+            <div class="close" type="button" onclick="close()">
+                关闭
+            </div>
+            <table class="table">
+                <caption>游戏规则&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</caption>
+                <thead><tr>
+                    <td>名称</td>
+                    <td>图示</td>
+                    <td>数量</td>
+                    <td>文字说明</td>
+                </tr></thead>
+                <tbody cellpadding="10px"><tr>
+                    <td>状元</td>
+                    <td id="detail" onclick="zhuangyuan()"> <font color="#9B2F23">查看详情</font> </td>
+                    <td>1</td>
+                    <td>有六种情况</td>
+                </tr>
+                <tr>
+                    <td>对堂</td>
+                    <td><img src="游戏规则贴图/对堂.png" ></td>
+                    <td>2</td>
+                    <td>六个骰子点数按顺序/倒叙为1-6</td>
+                </tr>
+                <tr>
+                    <td>三红</td>
+                    <td><img src="游戏规则贴图/三红.png" ></td>
+                    <td>4</td>
+                    <td>三个骰子是红4</td>
+                </tr>
+                <tr>
+                    <td>四进</td>
+                    <td><img src="游戏规则贴图/四进.png" ></td>
+                    <td>8</td>
+                    <td>四个骰子点数一样（除了红4）</td>
+                </tr>
+
+                <tr>
+                    <td>二举</td>
+                    <td><img src="游戏规则贴图/二举.png" ></td>
+                    <td>16</td>
+                    <td>两个骰子是红4</td>
+                </tr>
+                <tr>
+                    <td>一秀</td>
+                    <td>
+                        <img src="游戏规则贴图/一秀.png" >
+                    </td>
+                    <td>32</td>
+                    <td>一个骰子是红4（对堂情况除外）</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="rule2" id="rule2">
+            <div class="back" id="back" type="button" onclick="back()">
+                <img src="游戏规则贴图/Vector 3.png" class="vector">
+            </div>
+            <table class="table">
+                <caption>游戏规则——状元&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</caption>
+                <thead><tr>
+                    <td>名称</td>
+                    <td>图示</td>
+                    <td>文字说明</td>
+                </tr></thead>
+                <tbody cellpadding="10px">
+                <tr>
+                    <td>状元插金花</td>
+                    <td ><img src="游戏规则贴图/状元插金花.png" ></td>
+                    <td>四个红4，两个1</td>
+                </tr>
+
+                <tr>
+                    <td>六勃红</td>
+                    <td><img src="游戏规则贴图/六勃红.png" ></td>
+                    <td>六个红4</td>
+                </tr>
+
+                <tr>
+                    <td>六勃黑</td>
+                    <td><img src="游戏规则贴图/六勃黑.png" ></td>
+                    <td>六个相同点数（除了红4），比点数</td>
+                </tr>
+
+                <tr>
+                    <td>红五</td>
+                    <td><img src="游戏规则贴图/红五.png" ></td>
+                    <td>五个红4（比剩下点数）</td>
+                </tr>
+
+                <tr>
+                    <td>五子</td>
+                    <td><img src="游戏规则贴图/五子.png" ></td>
+
+                    <td>五个相同点数（除了红4），比剩下点数</td>
+                </tr>
+                <tr>
+                    <td>红四</td>
+                    <td>
+                        <img src="游戏规则贴图/红四.png" >
+                    </td>
+                    <td>四个红4</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+</body>
+</html>
+<script src="主页.js"></script>

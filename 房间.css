@@ -1,0 +1,322 @@
+*{
+    /* 初始化 */
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image:url("房间贴图/背景.png") ;
+    background-repeat: no-repeat;
+    background-size: 100% ;
+    overflow: hidden;
+}
+.invite{
+    /* 默认隐藏 */
+    z-index: 1;
+    opacity: 0;
+    transform:scale(0.9);
+    /* 变换基点 */
+    transform-origin: top;
+    /* 过渡效果 */
+    transition:0.3s ease;
+    transition-delay: 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    box-sizing: border-box;
+    position: absolute;
+    width: 917px;
+    height: 209px;
+    left: 296px;
+    top: 250px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07),
+    0px 41.7776px 33.4221px rgba(0, 0, 0, 0.0503198), 
+    0px 22.3363px 17.869px rgba(0, 0, 0, 0.0417275), 
+    0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 
+    0px 6.6501px 5.32008px rgba(0, 0, 0, 0.0282725), 
+    0px 2.76726px 2.21381px rgba(0, 0, 0, 0.0196802);
+    backdrop-filter: blur(40px);
+    border-radius: 50px;
+    border: 4px solid transparent;
+    background-clip: padding-box,border-box;
+    background-origin: padding-box,border-box;
+    background-image: rgba(255, 255, 255, 0.8),linear-gradient(to top right ,#a37956,#f0c493,#886051);
+}
+.active1 .invite{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.invite .text{
+    padding-right: 300px;
+    font-size: 32px;
+    font-family: FZCJLJT;
+}
+
+.invite .text input{
+    outline: none;
+    margin-top: 20px;
+    position: relative;
+    width: 300px;
+    padding: auto;
+    border: 0;
+    border-radius: 0;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-size: 32px;
+    font-family: FZCJLJT;
+}
+.invite .check{
+    background-color: rgba(255, 255, 255, 0);
+    border-width: 0;
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 1s;
+}
+.invite .check:hover{
+    transform: translate(0,-3px) scale(1.05);
+}
+.back{
+    position: absolute;
+    width: 649.5px;
+    height: 204px;
+    left: -200px;
+    top: 0;
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 1s;
+}
+.back:hover{
+    transform:scale(1.05);
+}
+.player{  
+    position: relative;
+    width: 1005px;
+    height: 489px;
+    left: 130px;
+    top: 120px;
+}
+.player .player1{
+    position: absolute;
+    left: 2.86%;
+    right: 76.52%;
+    top: 5%;
+    bottom: 5%;
+    background: #EDD7B7;
+    background-image: url("房间贴图/玩家卡片底部.svg"),url("主页贴图/看板娘和她的影子.svg");
+    background-position: -0.04% 100%,35% 27.5%;
+    background-size: 100%,250% 250%;
+    background-repeat: no-repeat,no-repeat;
+    box-shadow: 0px 35px 30px -10px rgba(0, 0, 0, 0.25);
+}
+@font-face {
+    font-family: 'FZCJLJT';
+    src: url('方正粗金陵简体.TTF');
+}
+
+.player .player1 .username{
+    position:absolute;
+    width: 200px;
+    height: 96px;
+    left: 3px;
+    bottom:0px ;
+    background: #edd7b700;
+    background-image: url("房间贴图/玩家id.svg");
+    background-position: 0% 0%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align-last: center;
+    line-height: 123px;
+    font-size: 18px;
+    font-family: FZCJLJT;
+    
+}
+.player .player2{
+    position: absolute;
+    left: 27.39%;
+    right: 51.99%;
+    top: 5.04%;
+    bottom: 4.95%;
+    background: rgba(120, 46, 25, 0.7);
+    background-image: url("房间贴图/添加按钮svg.svg");
+    background-position: 50% 50%;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    box-shadow: 0px 35px 30px -10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(30px);
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 0.5s;
+}
+.player .player2 .username{
+    opacity: 0;
+    transform: scale(1);
+    cursor:pointer;
+    /* 动画过渡 */
+    transition: 0.5s;
+}
+.active2 .player .player2 .username{
+    opacity: 1;
+    transform: scale(1);
+    position:absolute;
+    width: 200px;
+    height: 96px;
+    left: 3px;
+    bottom:0px ;
+    background: #edd7b700;
+    background-image: url("房间贴图/玩家id.svg");
+    background-position: 0% 0%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align-last: center;
+    line-height: 123px;
+    font-size: 18px;
+    font-family: FZCJLJT;
+}
+.active2 .player .player2{
+    position:absolute;
+    left: 27.39%;
+    right: 51.99%;
+    top: 5.04%;
+    bottom: 4.95%;
+    background: #EDD7B7;
+    background-image: url("房间贴图/玩家卡片底部.svg"),url("主页贴图/看板娘和她的影子.svg");
+    background-position: -0.04% 100%,35% 27.5%;
+    background-size: 100%,250% 250%;
+    background-repeat: no-repeat,no-repeat;
+    box-shadow: 0px 35px 30px -10px rgba(0, 0, 0, 0.25);
+}
+.player .player3{
+    position: absolute;
+    left: 51.99%;
+    right: 27.39%;
+    top: 5.04%;
+    bottom: 4.95%;
+    background: rgba(120, 46, 25, 0.7);
+    background-image: url("房间贴图/添加按钮svg.svg");
+    background-position: 50% 50%;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    box-shadow: 0px 35px 30px -10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(30px);
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 0.5s;
+}
+.player .player3 .username{
+    opacity: 0;
+    transform: scale(1);
+    cursor:pointer;
+    /* 动画过渡 */
+    transition: 0.5s;
+}
+.active3 .player .player3 .username{
+    opacity: 1;
+    transform: scale(1);
+    position:absolute;
+    width: 200px;
+    height: 96px;
+    left: 3px;
+    bottom:0px ;
+    background: #edd7b700;
+    background-image: url("房间贴图/玩家id.svg");
+    background-position: 0% 0%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align-last: center;
+    line-height: 123px;
+    font-size: 18px;
+    font-family: FZCJLJT;
+}
+.active3 .player .player3{
+    position:absolute;
+    left: 51.99%;
+    right: 27.39%;
+    top: 5.04%;
+    bottom: 4.95%;
+    background: #EDD7B7;
+    background-image: url("房间贴图/玩家卡片底部.svg"),url("主页贴图/看板娘和她的影子.svg");
+    background-position: -0.04% 100%,35% 27.5%;
+    background-size: 100%,250% 250%;
+    background-repeat: no-repeat,no-repeat;
+    box-shadow: 0px 35px 30px -10px rgba(0, 0, 0, 0.25);
+}
+.player .player4{
+    position: absolute;
+    left: 76.54%;
+    right: 2.84%;
+    top: 5.04%;
+    bottom: 4.95%;
+    background: rgba(120, 46, 25, 0.7);
+    background-image: url("房间贴图/添加按钮svg.svg");
+    background-position: 50% 50%;
+    background-size: 150%;
+    background-repeat: no-repeat;
+    box-shadow: 0px 35px 30px -10px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(30px);
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 0.5s;
+}
+.player .player4 .username{
+    opacity: 0;
+    transform: scale(1);
+    cursor:pointer;
+    /* 动画过渡 */
+    transition: 0.5s;
+}
+.active4 .player .player4 .username{
+    opacity: 1;
+    transform: scale(1);
+    position:absolute;
+    width: 200px;
+    height: 96px;
+    left: 3px;
+    bottom:0px ;
+    background: #edd7b700;
+    background-image: url("房间贴图/玩家id.svg");
+    background-position: 0% 0%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    text-align-last: center;
+    line-height: 123px;
+    font-size: 18px;
+    font-family: FZCJLJT;
+}
+.active4 .player .player4{
+    position:absolute;
+    left: 76.54%;
+    right: 2.84%;
+    top: 5.04%;
+    bottom: 4.95%;
+    background: #EDD7B7;
+    background-image: url("房间贴图/玩家卡片底部.svg"),url("主页贴图/看板娘和她的影子.svg");
+    background-position: -0.04% 100%,35% 27.5%;
+    background-size: 100%,250% 250%;
+    background-repeat: no-repeat,no-repeat;
+    box-shadow: 0px 35px 30px -10px rgba(0, 0, 0, 0.25);
+}
+.player2:hover{
+    transform:translate(0,-3px) scale(1.05);
+}
+.player3:hover{
+    transform:translate(0,-3px) scale(1.05);
+}
+.player4:hover{
+    transform:translate(0,-3px) scale(1.05);
+}
+.ready{
+    position: absolute;
+    width: 265.96px;
+    height: 142.65px;
+    right: 10px;
+    top: 650px;
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 1s;
+}
+.ready:hover{
+    transform:scale(1.05);
+}

@@ -1,0 +1,301 @@
+*{
+    /* 初始化 */
+
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: FZCJLJT;
+    background-image:url(主页贴图/背景.png) ;
+    background-repeat: no-repeat;
+    background-size: 100% ;
+    overflow: hidden;
+}
+.logo{
+    position: fixed;
+    width: 285px;
+    height: 150px;
+    left: 30px;
+    top: 20px;
+}
+.kanban{
+    position: fixed;
+    width: 480px;
+    height: 638.468px;
+    scale: 90%;
+    left: 140px;
+    top: 0;
+    animation: updown 3.5s infinite;
+}
+@keyframes updown{
+    0%{
+        top: 40px;
+    }
+    50%{
+        top: 20px;
+    }
+    100%{
+        top: 40px;
+    }
+}
+.start{
+    position: fixed;
+    width: 625.926px;
+    height: 200px;
+    left: 25%;
+    top: 70%;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.close:active{
+    transform: scale(0.98);
+}
+.rank{
+    position: fixed;
+    width: 40%;
+    left: 700px;
+    top: 200px;
+    cursor: pointer;
+    /* 动画过渡 */
+    transition: 1s;
+}
+.rank:hover{
+    transform:translate(0,-3px) scale(1.05);
+}
+.ider{
+    background-color: rgba(255, 255, 255, 0);
+    background-image: url(主页贴图/玩家id.svg);
+    background-position: 50%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: fixed;
+    width: 300px;
+    height: 150px;
+    left: 500px;
+    top: 80px;
+    text-align: center;
+    line-height: 150px;
+    font-size: 22px;
+    font-family: FZCJLJT;
+}
+/* 规则弹窗 */
+.rule{
+    z-index: 1;
+    box-sizing: border-box;
+    padding-left:50px ;
+    width: 1080px;
+    height: 500px;
+    position: absolute;
+    left: 100px;
+    top: 120px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 3px solid #FFFFFF;
+    backdrop-filter: blur(40px);
+    border-radius: 50px;
+}
+.rule2{
+    z-index: 1;
+    box-sizing: border-box;
+    padding-left:50px ;
+    width: 1080px;
+    height: 500px;
+    position: absolute;
+    left: 100px;
+    top: 120px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 3px solid #FFFFFF;
+    backdrop-filter: blur(40px);
+    border-radius: 50px;
+}
+.back{
+    z-index: 1;
+    scale: 0.7;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    left: 30px;
+    top: 20px;
+    background: #694320;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.close:active{
+    transform: scale(0.98);
+}
+.vector{
+    position: fixed;
+    margin-left: 60px;
+    margin-top: 28px;
+    scale: 1.1;
+}
+.close{
+    z-index: 1;
+    scale: 0.7;
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    left: 30px;
+    top: 20px;
+    background: #694320;
+    border-radius: 50px;
+    font-family: 'FZCJLJT';
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 100px;
+    /* identical to box height */
+    font-style: normal;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.3s all;
+}
+.close:active{
+    transform: scale(0.98);
+}
+.table{
+    border: none;
+    cellspacing: 0;
+    cellpadding: 10px;
+    width: 1080px;
+}
+.rule{
+    z-index: 1;
+    animation: trule1 1s infinite;
+}
+@keyframes trule1{
+    0%{scale: 0.8;
+        opacity: 0;
+    }
+    100%{scale: 0.8;
+        opacity: 0;
+    }
+}
+@keyframes trule2{
+    0%{scale: 0.8;
+        opacity: 0;
+    }
+    50%{scale: 1;
+        opacity: 1;
+    }
+    100%{
+        scale:1;
+        opacity: 1;
+    }
+}
+@keyframes trule3{
+    0%{scale:1;
+        opacity: 1;
+    }
+    50%{scale: 0.8;
+        opacity: 0;
+    }
+    100%{scale: 0.8;
+        opacity: 0;
+    }
+}
+.rule table{
+    padding-top: 10px;
+    padding-right: 80px;
+    scale: 0.9;;
+    text-align: center;
+    vertical-align: middle;
+}
+.rule caption{
+    position:relative;
+    margin: 0 auto;
+    padding-top: 32px;
+    padding-bottom: 10px;
+    font-size: 36px;
+    letter-spacing: 0.1em;
+}
+.rule thead{
+    font-size: 28px;
+    /* identical to box height */
+    letter-spacing: 0.05em;
+
+}
+.rule tbody {
+    font-size: 24px;
+    /* identical to box height */
+    letter-spacing: 0.05em;
+}
+.rule tbody tr :nth-child(4){
+    font-size: 20px;
+    /* identical to box height */
+    letter-spacing: 0.05em;
+    width:200px;
+}
+.rule2{
+    z-index: 0;
+    animation: zyrule1 1s  infinite ;
+}
+@keyframes zyrule1{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes zyrule2{
+    0%{scale: 0.8;
+        opacity: 0;
+    }
+    50%{scale: 1;
+        opacity: 1;
+    }
+    100%{scale: 1;
+        opacity: 1;
+    }
+}
+@keyframes zyrule3{
+    0%{scale: 1;
+        opacity: 1;
+    }
+    50%{scale: 0.8;
+        opacity: 0;
+    }
+    100%{scale: 0.8;
+        opacity: 0;
+    }
+}
+.rule2 table{
+    padding-top: 10px;
+    padding-right: 80px;
+    scale: 0.9;;
+    text-align: center;
+    vertical-align: middle;
+}
+.rule2 caption{
+    position:relative;
+    margin: 0 auto;
+    padding-top: 32px;
+    padding-bottom: 10px;
+    font-size: 36px;
+    letter-spacing: 0.1em;
+}
+.rule2 thead{
+    font-size: 28px;
+    /* identical to box height */
+    letter-spacing: 0.05em;
+}
+.rule2 tbody {
+    font-size: 24px;
+    /* identical to box height */
+    letter-spacing: 0.05em;
+}
+.rule2 tbody tr :nth-child(3){
+    font-size: 20px;
+    /* identical to box height */
+    letter-spacing: 0.05em;
+    width:200px;
+}
+.btn{
+    scale: 0.5;
+    margin-left: 80px;
+}
+@font-face {
+    font-family: 'FZCJLJT';
+    src: url("方正粗金陵简体.TTF");
+}
